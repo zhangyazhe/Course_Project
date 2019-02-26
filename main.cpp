@@ -5,10 +5,14 @@
 #include "syntax_analyse.h"
 #include "format.h"
 
-char *filename="sample1";
+char filename[64];
 FILE* fp;
 
-int main() {
+int main(int argc,char* argv[]) {
+    if (argc != 2) {
+        fprintf(stderr, "%s <filename>", argv[0]);
+        exit(-1);
+    }
     int op;
     while (1) {
         system("clear");
