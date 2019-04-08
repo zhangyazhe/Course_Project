@@ -5,7 +5,7 @@
 #include "syntax_analyse.h"
 #include "format.h"
 
-char filename[64];
+char *filename;
 FILE* fp;
 
 int main(int argc,char* argv[]) {
@@ -13,6 +13,7 @@ int main(int argc,char* argv[]) {
         fprintf(stderr, "%s <filename>", argv[0]);
         exit(-1);
     }
+    filename=argv[1];
     int op;
     while (1) {
         system("clear");
